@@ -4,6 +4,6 @@ COPY index.php /var/www/html
 
 EXPOSE 80
 
-RUN echo "ServerName localhost" | sudo tee /etc/apache2/conf.d/fqdn
+RUN echo "ServerName localhost" | tee /etc/apache2/conf.d/fqdn
 
 RUN systemctl reload apache2
