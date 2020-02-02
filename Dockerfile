@@ -2,8 +2,4 @@ FROM php:7.1-apache
 
 COPY index.php /var/www/html
 
-EXPOSE 80
-
-RUN echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf && a2enconf fqdn
-
-RUN /etc/init.d/apache2 start
+CMD sed -i "s/80/$PORT/g" /etc/apache2/sites-enabled/000-default.conf /etc/apache2/ports.conf && docker-php-entrypoint apache2-foreground
