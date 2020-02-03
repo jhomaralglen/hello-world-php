@@ -31,8 +31,8 @@ RUN mkdir -p /var/run/apache2 && chmod 777 -R /var/run/apache2 &&\
 # https://github.com/sclorg/s2i-php-container/
 # https://github.com/openshift-qe/ssh-git-docker/blob/master/ssh-git-openshift/Dockerfile
 
-COPY index.php /usr/local/bin/
-RUN chmod 755 /usr/local/bin/index.php &&\
+COPY index.php /var/www/html
+RUN chmod 755 /var/www/html/index.php &&\
   chmod 664 /etc/passwd &&\
   mkdir -p /home/openshift &&\
   chmod 777 -R /home/openshift
