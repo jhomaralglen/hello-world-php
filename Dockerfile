@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM ubuntu:latest
 MAINTAINER Dan Pupius <dan@pupi.us>
 
 RUN apt-get update && apt-get install -y software-properties-common
@@ -7,7 +7,7 @@ RUN add-apt-repository ppa:ondrej/php
 
 # Install apache, PHP, and supplimentary programs. openssh-server, curl, and lynx-cur are for debugging the container.
 RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get -y install \
-    apache2 php7.1 php7.1-mysql libapache2-mod-php7.1 curl lynx-cur
+    apache2 php7.1 php7.1-mysql libapache2-mod-php7.1 curl
 
 # Enable apache mods.
 RUN a2enmod php7.1
