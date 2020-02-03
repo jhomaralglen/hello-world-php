@@ -1,4 +1,4 @@
-FROM php:7.2-apache
+FROM php:5.6.31-apache
 
 # Install mcrypt, git, ssh-client
 RUN apt-get update &&\
