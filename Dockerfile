@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:xenial
 MAINTAINER Dan Pupius <dan@pupi.us>
 
 RUN apt-get update && apt-get install -y software-properties-common
