@@ -1,6 +1,9 @@
 FROM ubuntu:latest
 MAINTAINER Dan Pupius <dan@pupi.us>
 
+RUN apt-get install software-properties-common
+RUN apt-get update
+
 RUN add-apt-repository ppa:ondrej/php
 
 # Install apache, PHP, and supplimentary programs. openssh-server, curl, and lynx-cur are for debugging the container.
