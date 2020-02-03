@@ -14,6 +14,6 @@ COPY index.php /var/www/html
 
 RUN echo "ServerName localhost" >> /etc/apache2/http.conf
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
-RUN sudo /etc/apache2 reload
+RUN /etc/apache2 reload
 
 EXPOSE 80
